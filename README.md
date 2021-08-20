@@ -14,40 +14,40 @@ This package does a best-guess attempt to split a full name string into given na
 from splitter import FullNameSplitter
 
 splitter("George H. W. Bush")
-// => ["George H. W.", "Bush"]
+# => ["George H. W.", "Bush"]
 
 splitter("Kevin J. O'Connor")
-// => ["Kevin J.", "O'Connor"]
+# => ["Kevin J.", "O'Connor"]
 
 splitter("Thomas G. Della Fave")
-// => ["Thomas G.", "Della Fave"]
+# => ["Thomas G.", "Della Fave"]
 
 splitter("Gabriel Van Helsing")
-// => ["Gabriel", "Van Helsing"]
+# => ["Gabriel", "Van Helsing"]
 
-// If full name isn't complete, it tries to split partially:
+# If full name isn't complete, it tries to split partially:
 
 splitter("George W.")
-// => ["George W.", null]
+# => ["George W.", null]
 
 splitter("George")
-// => ["George", null]
+# => ["George", null]
 
 splitter("Van Helsing")
-// => [null, "Van Helsing"]
+# => [null, "Van Helsing"]
 
 splitter("d'Artagnan")
-// => [null, "d'Artagnan"]
+# => [null, "d'Artagnan"]
 ```
 
 If it can't split a name correctly, it is possible to split by comma:
 
 ```python
 splitter("John Quincy Adams")
-// => ["John Quincy", "Adams"]
+# => ["John Quincy", "Adams"]
 
 splitter("John, Quincy Adams")
-// => ["John", "Quincy Adams"]
+# => ["John", "Quincy Adams"]
 ```
 
 ## Copyright
