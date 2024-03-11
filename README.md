@@ -8,6 +8,15 @@ However, there are times when it is necessary to have a split given name and fam
 
 This package does a best-guess attempt to split a full name string into given name and family name. For many Western names, it will get it right. It knows about some common family name prefixes used in many European-language names, and initials. It removes salutations (`Miss`, `Doctor`, etc) and suffixes (`III`, `Jr`, etc).
 
+
+## Web service
+
+```
+$ docker-compose up -d --build
+$ curl 'localhost:8080?full_name=Sasha%20Kantoriz'
+{"first_name":"Sasha","last_name":"Kantoriz"}
+```
+
 ## Examples
 
 ```python
