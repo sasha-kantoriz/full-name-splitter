@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 from splitter import splitter
 
@@ -7,6 +8,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def entrypoint():
+    if request.args.get('token') != os.getenv("TOKEN"):
+        return jsonify({"message": "Not Authorized"}), 401
+
     full_name = request.args.get('full_name')
     if full_name is None:
         return jsonify({'status': 'Error: Missing payload', 'message': '"full_name" query argument is required.'})
