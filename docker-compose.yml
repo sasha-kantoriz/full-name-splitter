@@ -7,6 +7,6 @@ services:
     restart: always
     env_file:
       - .env
+    network_mode: bridge
     ports:
       - "5200:8080"
-
